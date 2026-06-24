@@ -316,7 +316,7 @@ export default function App() {
                 <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-emerald-50">
                   <img
                     referrerPolicy="no-referrer"
-                    src="/public/assets/images/kantor_kelurahan.jpg"
+                    src="/assets/images/kantor_kelurahan.jpg"
                     alt="Kantor Kelurahan Trajeng Pasuruan"
                     className="w-full h-44 object-cover object-center filter saturate-75 contrast-105"
                   />
@@ -334,7 +334,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-2.5 mt-4 w-full max-w-sm">
                   <div className="rounded-xl overflow-hidden border border-gray-200 h-16 shadow-xs relative group cursor-pointer">
                     <img
-                      src="/src/assets/images/pelayanan1.jpg"
+                      src="/assets/images/pelayanan1.jpg"
                       alt="Aparatur Kelurahan"
                       className="w-full h-full object-cover filter saturate-75 hover:scale-110 transition-all duration-300"
                       referrerPolicy="no-referrer"
@@ -342,7 +342,7 @@ export default function App() {
                   </div>
                   <div className="rounded-xl overflow-hidden border border-gray-190 h-16 shadow-xs relative group cursor-pointer">
                     <img
-                      src="/src/assets/images/pelayanan2.jpg"
+                      src="/assets/images/pelayanan2.jpg"
                       alt="Loket Registrasi"
                       className="w-full h-full object-cover filter saturate-75 hover:scale-110 transition-all duration-300"
                       referrerPolicy="no-referrer"
@@ -350,7 +350,7 @@ export default function App() {
                   </div>
                   <div className="rounded-xl overflow-hidden border border-gray-190 h-16 shadow-xs relative group cursor-pointer">
                     <img
-                      src="/src/assets/images/pelayanan3.jpg"
+                      src="/assets/images/pelayanan3.jpg"
                       alt="Rembuk Warga"
                       className="w-full h-full object-cover filter saturate-75 hover:scale-110 transition-all duration-300"
                       referrerPolicy="no-referrer"
