@@ -1,0 +1,6 @@
+{
+  "name": "SIM Kelurahan Trajeng",
+  "description": "Sistem Informasi Manajemen Kelurahan Trajeng, Kota Pasuruan untuk pengurusan & unduh pelayanan surat administrasi warga secara mandiri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
