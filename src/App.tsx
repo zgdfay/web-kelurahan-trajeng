@@ -316,7 +316,7 @@ export default function App() {
                 <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-emerald-50">
                   <img
                     referrerPolicy="no-referrer"
-                    src="/src/assets/images/kantor_kelurahan.jpg"
+                    src="/public/assets/images/kantor_kelurahan.jpg"
                     alt="Kantor Kelurahan Trajeng Pasuruan"
                     className="w-full h-44 object-cover object-center filter saturate-75 contrast-105"
                   />
