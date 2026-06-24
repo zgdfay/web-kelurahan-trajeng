@@ -1,4 +1,5 @@
 import mysql from 'mysql2/promise';
+import 'dotenv/config'; // Load env variables
 
 async function setupDatabase() {
   console.log('Memulai inisialisasi database...');
@@ -6,19 +7,25 @@ async function setupDatabase() {
   try {
     // Koneksi ke server MySQL (tanpa menentukan database terlebih dahulu)
     const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root', // default XAMPP user
-      password: '', // default XAMPP password
+      host: process.env.DB_HOST || 'localhost',
+      port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306,
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || '',
+      ssl: {
+        rejectUnauthorized: true
+      }
     });
 
     console.log('Terhubung ke server MySQL.');
 
+    const dbName = process.env.DB_NAME || 'db_kelurahan';
+
     // Membuat Database jika belum ada
-    await connection.query('CREATE DATABASE IF NOT EXISTS db_kelurahan');
-    console.log('Database `db_kelurahan` berhasil dibuat atau sudah ada.');
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\``);
+    console.log(`Database \`${dbName}\` berhasil dibuat atau sudah ada.`);
 
     // Beralih menggunakan database tersebut
-    await connection.query('USE db_kelurahan');
+    await connection.query(`USE \`${dbName}\``);
 
     // 1. Membuat tabel Users
     await connection.query(`

@@ -1,6 +1,7 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
 import cors from 'cors';
+import 'dotenv/config'; // Load env variables
 
 const app = express();
 const PORT = 5000;
@@ -12,13 +13,17 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Database Connection Pool
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'db_kelurahan',
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306,
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'db_kelurahan',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
 
 // Test Connection on Startup
